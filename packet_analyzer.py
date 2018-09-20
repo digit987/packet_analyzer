@@ -93,10 +93,7 @@ def parse_icmp_header(packet, ip_header_length):
     data = packet[skip:]
     print('Data : ' + data)
 
-
-# Till the end of world keep receiving packets
 while True:
-    packet = s.recvfrom(65565)
-    #get first packet from tuple and process
+    packet = s.recvfrom(65565)    
     packet = packet[0]
     parse_ethernet_header(packet)
